@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Caedu</string>
+    <string name="configuracoes">Configurações</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="lista_sistemas">Lista de Sistemas</string>
+    <string name="auditoria_precos">Auditoria de Preços</string>
+    <string name="produto">Produto</string>
+    <string name="imprimir">Imprimir</string>
+    <string name="codigo_produto">Código Produto</string>
+    <string name="status_loja">Status Loja</string>
+    <string name="status_regional">Status Regional</string>
+    <string name="status_empresa">Status Empresa</string>
+    <string name="estoque_loja">Estoque Loja</string>
+    <string name="tipo">Tipo</string>
+    <string name="vendas">Vendas</string>
+    <string name="idade">Idade</string>
+    <string name="margem">Margem</string>
+    <string name="preco">Preço</string>
+    <string name="desc_produto">Descrição Produto</string>
+    <string name="enviar_reposicao">Enviar Reposição</string>
+    <string name="total_vendas">Total Vendas</string>
+    <string name="emissao">Emissão</string>
+    <string name="doc">Doc</string>
+    <string name="quantidade">Quantidade</string>
+    <string name="versao_auditoria">Versão: 1.0.0</string>
+    <string name="campo_embranco">Campo obrigatório em branco.</string>
+    <string name="carregando">Carregando..</string>
+
+
+    <string-array name="auditoria_titulos">
+        <item>Preço</item>
+        <item>Reposição</item>
+        <item>M/P</item>
+        <item>Conf.Reposição</item>
+        <item>Detalhamento</item>
+        <item>Movimento</item>
+    </string-array>
+</resources>

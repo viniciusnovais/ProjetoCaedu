@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="pdasolucoes.com.br.projetocaedu">
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/logo_caedu"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".mobile.Principal.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".mobile.Principal.LoginActivity"></activity>
+
+
+        <activity android:name=".mobile.Principal.ConfiguracaoActivity"></activity>
+
+        <activity android:name=".mobile.Principal.ListaSistemasActivity"></activity>
+
+        <activity android:name=".mobile.AuditoriaDePrecos.AuditoriaActivity"></activity>
+    </application>
+
+</manifest>
