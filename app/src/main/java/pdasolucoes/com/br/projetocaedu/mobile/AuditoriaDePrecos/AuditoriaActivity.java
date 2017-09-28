@@ -1,6 +1,7 @@
 package pdasolucoes.com.br.projetocaedu.mobile.AuditoriaDePrecos;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -13,9 +14,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+
 import pdasolucoes.com.br.projetocaedu.R;
 import pdasolucoes.com.br.projetocaedu.mobile.AuditoriaDePrecos.Adapter.PageAdapterAuditoria;
+import pdasolucoes.com.br.projetocaedu.mobile.Model.Produto;
 import pdasolucoes.com.br.projetocaedu.mobile.Principal.LoginActivity;
+import pdasolucoes.com.br.projetocaedu.mobile.Services.AuditoriaDePrecosProdutoService;
 import pdasolucoes.com.br.projetocaedu.mobile.Util.Metodo;
 
 /**
@@ -48,6 +53,8 @@ public class AuditoriaActivity extends AppCompatActivity {
                             codProduto = editCodProd.getText().toString();
                             editCodProd.setText("");
                             Metodo.fecharTeclado(AuditoriaActivity.this);
+                            AsynGetProduto task = new AsynGetProduto();
+                            task.execute();
                         } else {
                             Metodo.toastCamposObrigatorios(AuditoriaActivity.this);
                         }
@@ -82,6 +89,21 @@ public class AuditoriaActivity extends AppCompatActivity {
         viewPager.setAdapter(new PageAdapterAuditoria(getSupportFragmentManager(), getResources().getStringArray(R.array.auditoria_titulos)));
         tabLayout.setupWithViewPager(viewPager);
 
+    }
+
+
+    public class AsynGetProduto extends AsyncTask {
+
+
+        @Override
+        protected Object doInBackground(Object[] params) {
+
+            List<Produto> lista = AuditoriaDePrecosProdutoService.getProdutoWS("VILA FORMOSA", "240102400006508", "0");
+
+            Log.w("nada",lista.toString());
+
+            return null;
+        }
     }
 
 }
