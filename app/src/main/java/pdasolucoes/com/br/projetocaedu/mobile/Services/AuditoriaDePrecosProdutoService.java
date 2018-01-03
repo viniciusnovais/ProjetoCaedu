@@ -12,10 +12,6 @@ import org.w3c.dom.Document;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
-import pdasolucoes.com.br.projetocaedu.mobile.Model.Filial;
 import pdasolucoes.com.br.projetocaedu.mobile.Model.Produto;
 
 /**
@@ -34,7 +30,6 @@ public class AuditoriaDePrecosProdutoService {
 
         SoapObject request = new SoapObject(NAMESPACE, "ConsultaProdutoSortimento");
         SoapObject response;
-
         List<Produto> lista = new ArrayList<>();
 
         try {
@@ -69,31 +64,29 @@ public class AuditoriaDePrecosProdutoService {
             transport.call(SOAP_ACTION, soapEnvelope);
             response = (SoapObject) soapEnvelope.getResponse();
 
+            SoapObject diffGramObject = (SoapObject) response.getProperty("diffgram");
+            SoapObject documentElement = (SoapObject) diffGramObject.getProperty("DocumentElement");
 
+            int soma = 0;
+            for (int i = 0; i < documentElement.getPropertyCount(); i++) {
+                SoapObject item = (SoapObject) documentElement.getProperty(i);
+                Produto p = new Produto();
+                p.setBarra(item.getPropertyAsString("barras"));
+                p.setCodProduto(item.getPropertyAsString("codigo"));
+                p.setTamanho(item.getPropertyAsString("tamanho"));
+                p.setDescricao(item.getPropertyAsString("descricao"));
+                p.setCor(item.getPropertyAsString("cor"));
+                p.setVendas(Integer.parseInt(item.getPropertyAsString("VENDAS")));
+                p.setPreco(Float.parseFloat(item.getPropertyAsString("PRECO")));
+                p.setQtde(Integer.parseInt(item.getPropertyAsString("qde")));
+                p.setRep(Integer.parseInt(item.getPropertyAsString("rep")));
+                p.setIdade(Integer.parseInt(item.getPropertyAsString("IDADE")));
+                p.setTipo_produto(item.getPropertyAsString("TIPO_PRODUTO"));
+                p.setProp(item.getPropertyAsString("PROP"));
+                p.setMargem(Float.parseFloat(item.getPropertyAsString("MARGEM_BRUTA")));
 
-
-            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-            DocumentBuilder docBuilder = dbf.newDocumentBuilder();
-            Document document1 = docBuilder.newDocument();
-
-            Document document2 = docBuilder.parse( response.toString() );
-
-            Log.w("produto",response.toString());
-
-            SoapObject item;
-
-//            for (int i = 0; i < response.getPropertyCount(); i++) {
-//                item = (SoapObject) response.getProperty(i);
-//                for (int j = 0; j < item.getPropertyCount(); j++) {
-//                    Filial f = new Filial();
-//
-//                    f.setCodigo(Integer.parseInt(item.getProperty("Codigo").toString()));
-//                    f.setEmail(item.getProperty("Email").toString());
-//                    f.setNome(item.getProperty("Nome").toString());
-//
-//                    lista.add(f);
-//                }
-//            }
+                lista.add(p);
+            }
 
         } catch (Exception e) {
             e.printStackTrace();

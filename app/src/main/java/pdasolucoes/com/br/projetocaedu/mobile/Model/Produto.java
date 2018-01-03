@@ -1,10 +1,12 @@
 package pdasolucoes.com.br.projetocaedu.mobile.Model;
 
+import java.io.Serializable;
+
 /**
  * Created by PDA on 26/09/2017.
  */
 
-public class Produto {
+public class Produto implements Serializable {
     private String barra;
     private String codProduto;
     private String descricao;
@@ -17,6 +19,26 @@ public class Produto {
     private String tipo_produto;
     private String prop;
     private float margem;
+    private int vendas;
+    private int estoqueLoja;
+    private String statusLoja;
+    private String statusRegional;
+
+    public String getStatusLoja() {
+        return statusLoja;
+    }
+
+    public void setStatusLoja(String statusLoja) {
+        this.statusLoja = statusLoja;
+    }
+
+    public String getStatusRegional() {
+        return statusRegional;
+    }
+
+    public void setStatusRegional(String statusRegional) {
+        this.statusRegional = statusRegional;
+    }
 
     public String getBarra() {
         return barra;
@@ -112,5 +134,21 @@ public class Produto {
 
     public void setMargem(float margem) {
         this.margem = margem;
+    }
+
+    public int getVendas() {
+        return vendas;
+    }
+
+    public void setVendas(int vendas) {
+        this.vendas = vendas;
+    }
+
+    public int getEstoqueLoja() {
+        return estoqueLoja;
+    }
+
+    public void setEstoqueLoja(int estoqueLoja) {
+        this.estoqueLoja = estoqueLoja;
     }
 }

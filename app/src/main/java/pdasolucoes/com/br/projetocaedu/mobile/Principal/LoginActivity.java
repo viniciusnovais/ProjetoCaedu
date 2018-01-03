@@ -12,6 +12,7 @@ import android.widget.EditText;
 import org.ksoap2.serialization.SoapObject;
 
 import pdasolucoes.com.br.projetocaedu.R;
+import pdasolucoes.com.br.projetocaedu.mobile.AuditoriaDePrecos.AuditoriaActivity;
 import pdasolucoes.com.br.projetocaedu.mobile.Services.PrincipalLoginService;
 import pdasolucoes.com.br.projetocaedu.mobile.Util.Metodo;
 
@@ -90,7 +91,8 @@ public class LoginActivity extends AppCompatActivity {
             super.onPostExecute(o);
             Metodo.progressDialogCarregamento(LoginActivity.this).dismiss();
 
-            Intent i = new Intent(LoginActivity.this, ListaSistemasActivity.class);
+//            Intent i = new Intent(LoginActivity.this, ListaSistemasActivity.class);
+            Intent i = new Intent(LoginActivity.this, AuditoriaActivity.class);
             startActivity(i);
             finish();
         }

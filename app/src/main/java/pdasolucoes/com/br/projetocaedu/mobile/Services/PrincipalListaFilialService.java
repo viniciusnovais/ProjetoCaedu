@@ -10,32 +10,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pdasolucoes.com.br.projetocaedu.mobile.Model.Filial;
-import pdasolucoes.com.br.projetocaedu.mobile.Model.Sistemas;
 
 /**
- * Created by PDA on 03/10/2017.
+ * Created by PDA on 28/09/2017.
  */
 
-public class PrincipalListaSistemasService {
+public class PrincipalListaFilialService {
 
-    private static String URL = "http://172.16.6.59:8081/papafila/wsautenticacao.asmx";
+    private static String URL = "http://172.16.6.59:8081/papafila/wsfilial.asmx";
 
-    private static String SOAP_ACTION = "http://tempuri.org/ListaDeSistemas ";
+    private static String SOAP_ACTION = "http://tempuri.org/ListaDeFiliais";
 
     private static String NAMESPACE = "http://tempuri.org/";
 
-    public static List<Sistemas> listaSistemasWS(String perfil) {
+    public static List<Filial> listaFilialWS(String codigo) {
 
-        SoapObject request = new SoapObject(NAMESPACE, "ListaDeSistemas ");
+        SoapObject request = new SoapObject(NAMESPACE, "ListaDeFiliais");
         SoapObject response;
 
-        List<Sistemas> lista = new ArrayList<>();
+        List<Filial> lista = new ArrayList<>();
 
         try {
 
             PropertyInfo codigoInfo = new PropertyInfo();
-            codigoInfo.setName("_perfil");
-            codigoInfo.setValue(perfil);
+            codigoInfo.setName("_codigo");
+            codigoInfo.setValue(codigo);
             codigoInfo.setType(PropertyInfo.STRING_CLASS);
 
             request.addProperty(codigoInfo);
@@ -53,13 +52,13 @@ public class PrincipalListaSistemasService {
 
             for (int i = 0; i < response.getPropertyCount(); i++) {
                 item = (SoapObject) response.getProperty(i);
-                Sistemas s = new Sistemas();
+                Filial f = new Filial();
 
-                s.setCodigo(Integer.parseInt(item.getProperty("Codigo").toString()));
-                s.setNome(item.getProperty("Nome").toString());
-                s.setSigla(item.getProperty("Sigla").toString());
+                f.setCodigo(Integer.parseInt(item.getProperty("Codigo").toString()));
+                f.setEmail(item.getProperty("Email").toString());
+                f.setNome(item.getProperty("Nome").toString());
 
-                lista.add(s);
+                lista.add(f);
             }
 
         } catch (Exception e) {

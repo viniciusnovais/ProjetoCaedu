@@ -4,53 +4,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_edittext"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="10dp">
 
-    <TableLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Indisponível no momento" />
 
-        android:layout_height="wrap_content">
+    <!--<TableLayout-->
+    <!--android:layout_width="match_parent"-->
 
-        <TableRow>
+    <!--android:layout_height="wrap_content">-->
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/tipo"
-                android:paddingLeft="5dp"
-                android:background="@drawable/bg_edittext"
-                android:layout_weight=".4" />
+    <!--<TableRow>-->
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/doc"
-                android:paddingLeft="5dp"
-                android:background="@drawable/bg_edittext"
-                android:layout_weight=".3" />
+    <!--<TextView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="@string/tipo"-->
+    <!--android:paddingLeft="5dp"-->
+    <!--android:background="@drawable/bg_edittext"-->
+    <!--android:layout_weight=".4" />-->
 
-            <TextView
-                android:layout_width="0dp"
-                android:background="@drawable/bg_edittext"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:text="@string/emissao"
-                android:layout_weight=".3" />
+    <!--<TextView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="@string/doc"-->
+    <!--android:paddingLeft="5dp"-->
+    <!--android:background="@drawable/bg_edittext"-->
+    <!--android:layout_weight=".3" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:background="@drawable/bg_edittext"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:paddingLeft="5dp"-->
+    <!--android:text="@string/emissao"-->
+    <!--android:layout_weight=".3" />-->
 
 
-        </TableRow>
+    <!--</TableRow>-->
 
 
-    </TableLayout>
+    <!--</TableLayout>-->
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycleView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".9"
-        android:background="@drawable/bg_edittext">
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--android:id="@+id/recycleView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight=".9"-->
+    <!--android:background="@drawable/bg_edittext">-->
 
-    </android.support.v7.widget.RecyclerView>
+    <!--</android.support.v7.widget.RecyclerView>-->
 
 </LinearLayout>

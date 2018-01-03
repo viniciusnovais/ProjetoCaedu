@@ -4,34 +4,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_edittext"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="10dp">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycleView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".8"
-        android:background="@drawable/bg_edittext">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Indisponível no momento" />
 
-    </android.support.v7.widget.RecyclerView>
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--android:id="@+id/recycleView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight=".8"-->
+    <!--android:background="@drawable/bg_edittext">-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".2"
-        android:gravity="bottom"
-        android:orientation="horizontal">
+    <!--</android.support.v7.widget.RecyclerView>-->
 
-        <Button
-            android:id="@+id/btnCancelar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/bg_button"
-            android:text="@string/enviar_reposicao"
-            android:textAllCaps="false"
-            android:textSize="15dp" />
-    </LinearLayout>
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight=".2"-->
+    <!--android:gravity="bottom"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<Button-->
+    <!--android:id="@+id/btnCancelar"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="@drawable/bg_button"-->
+    <!--android:text="@string/enviar_reposicao"-->
+    <!--android:textAllCaps="false"-->
+    <!--android:textSize="15dp" />-->
+    <!--</LinearLayout>-->
 
 </LinearLayout>

@@ -29,6 +29,14 @@ public class Metodo {
                 activity.getCurrentFocus().getWindowToken(), 0);
     }
 
+    public static void abrirTeclado(Activity activity, EditText editText) {
+        InputMethodManager inputMethodManager =
+                (InputMethodManager) activity.getSystemService(
+                        Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT);
+        editText.requestFocus();
+    }
+
     public static void toastCamposObrigatorios(Activity activity) {
         Toast.makeText(activity, activity.getString(R.string.campo_embranco), Toast.LENGTH_SHORT).show();
     }

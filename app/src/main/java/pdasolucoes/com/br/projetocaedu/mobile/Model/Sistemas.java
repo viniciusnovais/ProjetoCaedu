@@ -1,14 +1,14 @@
 package pdasolucoes.com.br.projetocaedu.mobile.Model;
 
 /**
- * Created by PDA on 28/09/2017.
+ * Created by PDA on 03/10/2017.
  */
 
-public class Filial {
+public class Sistemas {
 
     private int codigo;
     private String nome;
-    private String email;
+    private String sigla;
 
     public int getCodigo() {
         return codigo;
@@ -26,18 +26,11 @@ public class Filial {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+    public String getSigla() {
+        return sigla;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-
-    @Override
-    public String toString() {
-        return codigo + " - " + nome;
-
+    public void setSigla(String sigla) {
+        this.sigla = sigla;
     }
 }
